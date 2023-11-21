@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+
 
 from . import views
 
 urlpatterns = [
     path('', views.mainpage),
-    path('company/', views.company),
+    path('company_info/', views.company),
+    path('company_or/', views.company),
+
 ]
