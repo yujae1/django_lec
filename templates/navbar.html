@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="ko">
     <head>
         <meta charset="utf-8" />
@@ -10,35 +10,30 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="{%static 'styles.css'%}">
-        <link rel="stylesheet" type="text/css" href="{%static 'styles2.css'%}">
-        <link rel="stylesheet" type="text/css" href="{%static 'bootstrap.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     </head>
-   <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="/">Comento</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="/company_info/">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/tech_info/">Technology</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/portfolio_info">Portfolio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/service_info">Service</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sign in</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="blog-home.html">Sign in</a></li>
-                                    <li><a class="dropdown-item" href="blog-post.html">Sign up</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:logout' %}">{{ user.username }}(logout)</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">login</a></li>
+                        {% endif %}
+                    </ul>
                 </div>
-            </nav>
-        </main>
-   </body>
+            </div>
+        </nav>
+
+    </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="ko">
     <head>
         <meta charset="utf-8" />
@@ -10,25 +10,12 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="{%static 'styles.css'%}">
-        <link rel="stylesheet" type="text/css" href="{%static 'styles2.css'%}">
-        <link rel="stylesheet" type="text/css" href="{%static 'bootstrap.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
     </head>
     <body>
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2023</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contact</a>
-                    </div>
-                </div>
-            </div>
+        <footer class="py-5 bg-dark">
+            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
         </footer>
     </body>
 </html>
