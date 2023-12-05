@@ -28,7 +28,7 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/company_info/">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="/tech_info/">Technology</a></li>
                         <li class="nav-item"><a class="nav-link" href="/portfolio_info/">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="service_info">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/service_info/">Services</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {% if user.is_authenticated %}
@@ -54,5 +54,6 @@
 
         <!-- Bootstrap JS (optional) -->
         <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'main_scripts.js' %}"></script>
     </body>
 </html>

@@ -27,6 +27,7 @@ urlpatterns = [
     path('tech_info/', views.tech_info),
     path('portfolio_info/', views.portfolio_info),
     path('service_info/', views.service_info),
+    path('mysite/', views.service_info),
 
 
 ]
